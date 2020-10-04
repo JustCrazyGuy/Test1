@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5.Command
+{
+    class ExitCommand : ICommand
+    {
+        public bool CanRun(string input)
+        {
+            return input == "exit";
+        }
+
+        public string GetMenuRow()
+        {
+            return "exit - выход";
+        }
+
+        public string Run(string input, ref bool isExit)
+        {
+            isExit = true;
+            return "Работа приложения завершена.";
+        }
+     
+        
+    }
+}
